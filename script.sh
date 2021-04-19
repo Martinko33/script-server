@@ -1,9 +1,10 @@
 #!/bin/bash
+REPERTOIRE_SCRIPT=/opt/script-server
 
 echo "instalation paquets APT"
 apt update
 apt install -y mariadb-server mariadb-client
-apt install -y php apache2 libapache2-mod-php php-mysql php-xml
+apt install -y php7.4 apache2 libapache2-mod-php7.4 php7.4-mysql php7.4-xml
 apt install -y composer vim git snapd
 
 echo "Config snapd + certbot"
@@ -41,7 +42,7 @@ MD5_SRC=$(md5sum 000-default.conf |awk '{print $1}')
 if [ "$MD5_DEST" != "$MD5_SRC" ]
 then
       	echo "on ecrase la conf apache"
-	 cp 000-default.conf /etc/apache2/sites-available/000-default.conf
+	 cp $REPERTOIRE_SCRIPT/000-default.conf /etc/apache2/sites-available/000-default.conf
         service apache2 restart
 fi
 
