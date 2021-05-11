@@ -4,7 +4,7 @@ REPERTOIRE_SCRIPT=/opt/script-server
 echo "instalation paquets APT"
 apt update
 apt install -y mariadb-server mariadb-client
-apt install -y php7.4 apache2 libapache2-mod-php7.4 php7.4-mysql php7.4-xml
+apt install -y php7.2 apache2 libapache2-mod-php7.2 php7.2-mysql php7.2-xml
 apt install -y composer vim git snapd
 
 echo "Config snapd + certbot"
